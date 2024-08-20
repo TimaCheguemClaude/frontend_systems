@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Appointment - Hospital Management System</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <style>
+    .notification {
+      background-color: #e9ecef;
+      border-left: 5px solid #007bff;
+      margin-bottom: 20px;
+      padding: 10px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Book Appointment</h1>
+    <form id="appointmentForm">
+      <div class="form-group">
+        <label for="appointmentDate">Appointment Date</label>
+        <input type="date" class="form-control" id="appointmentDate" required>
+      </div>
+      <div class="form-group">
+        <label for="appointmentReason">Reason for Appointment</label>
+        <input type="text" class="form-control" id="appointmentReason" required>
+      </div>
+      <div class="form-group">
+        <label for="appointmentUrgency">Degree of Urgency</label>
+        <select class="form-control" id="appointmentUrgency" required>
+          <option value="Low">Low</option>
+          <option value="Medium">Medium</option>
+          <option value="High">High</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Book Appointment</button>
+    </form>
+    <div class="notification" id="notification">
+      <p>Your appointment successfully booked</p>
+      <button type="button" class="btn btn-primary" onclick="hideNotification()">Ok</button>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('appointmentForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const appointmentDate = document.getElementById('appointmentDate').value;
+      const appointmentReason = document.getElementById('appointmentReason').value;
+      const appointmentUrgency = document.getElementById('appointmentUrgency').value;
+      if (appointmentDate && appointmentReason && appointmentUrgency) {
+        // Add appointment to local storage
+        let appointments = JSON.parse(localStorage.getItem('appointments')) || [];
+        appointments.push({ date: appointmentDate, reason: appointmentReason, urgency: appointmentUrgency });
+        localStorage.setItem('appointments', JSON.stringify(appointments));
+
+        // Show notification
+        document.getElementById('notification').style.display = 'block';
+      }
+    });
+
+    function hideNotification() {
+      document.getElementById('notification').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
