@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hospital Management System</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <style>
+    .menu-item {
+      text-align: center;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 15px;
+      color: white;
+      background-color: #007bff; /* Primary color changed to blue */
+      display: block;
+      text-decoration: none;
+    }
+    .menu-item:hover {
+      background-color: #0056b3; /* Darker blue on hover */
+      cursor: pointer;
+    }
+    .icon-text {
+      display: block;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container-fluid">
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light flex-column align-items-start">
+      <a class="navbar-brand" href="#">Hospital Management System</a>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav flex-column">
+          <li class="nav-item active">
+            <a class="nav-link" href="dashboard.html">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="book_appointment.html">Book Appointment</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="appointment_history.html">Appointment History</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="row mt-5">
+      <div class="col-md-6">
+        <div class="text-center">
+          <a href="book_appointment.html" class="menu-item">
+            <i class="fas fa-calendar-plus fa-3x"></i>
+            <span class="icon-text">Book My Appointment</span>
+          </a>
+          <a href="appointment_history.html" class="menu-item">
+            <i class="fas fa-history fa-3x"></i>
+            <span class="icon-text">Appointment History</span>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <!-- Other content can go here -->
+      </div>
+    </div>
+  </div>
+
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
