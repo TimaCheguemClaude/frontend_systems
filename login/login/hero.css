@@ -1,0 +1,42 @@
+body {
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  font-family: Arial, sans-serif;
+}
+
+.custom-container {
+  max-width: 500px; /* Further reduce the width of the container */
+  margin-left: 200px;/* Adjust the container's position to the right */
+}
+
+.card {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  background-color: transparent; /* Remove the background color of the header */
+  border-bottom: none; /* Remove the border line */
+  padding-bottom: 0; /* Remove padding for a compact header */
+}
+
+.card-header h2 {
+  margin-top: 10px;
+  font-size: 1.5rem; /* Adjust font size of the header */
+}
+
+.btn-primary, .btn-success {
+  padding: 5px 10px; /* Reduce button size */
+  font-size: 12px; /* Reduce font size */
+}
+
+.navbar {
+  margin-bottom: 30px; /* Add some spacing between navbar and forms */
+}
+
+.navbar-brand img {
+  width: 30px; /* Smaller logo in the navbar */
+}
+
+.text-center {
+  color: #555;
+}
