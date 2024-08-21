@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor's Welcome Page</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: linear-gradient(to right, #effa8c, #bcbc9f, #757550, #5f5f46, #a48a8a);
+            ; /* Sky blue background */
+            background-size: cover; /* Ensure background covers the entire page */
+            background-attachment: fixed; /* Fix background image while scrolling */
+            color: #181111; /* Dark text color for readability */
+        }
+
+        /* Container Styles */
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(to right, #6a0dad, #9b5de5, #d6a6e3, #87CEEB);
+            ; /* Semi-transparent white background */
+            padding: 20px 0;
+            position: relative;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Light shadow for a lifted effect */
+        }
+
+        .logo {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            height: 60px; /* Adjust size as needed */
+            width: auto;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em; /* Larger font size for the header */
+            color: #151315; /* Green color for the heading */
+        }
+
+        nav {
+            margin-top: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center; /* Center align navigation items */
+        }
+
+        nav ul li {
+            margin: 0 20px; /* Spacing between menu items */
+        }
+
+        nav ul li a {
+            color: #0c0f0c; /* Green color for links */
+            text-decoration: none;
+            font-size: 1.1em; /* Slightly larger font size for readability */
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main Section Styles */
+        main {
+            padding: 40px 0;
+        }
+
+        .welcome-message {
+            background: rgba(229, 200, 228, 0.9); /* White background with slight transparency */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            text-align: bottom center;
+        }
+
+        .welcome-message h2 {
+            font-size: 2em; /* Larger font size for section heading */
+            color: #9c16c5; /* Green color for the heading */
+        }
+
+        .welcome-message p {
+            font-size: 1.2em; /* Larger font size for readability */
+            margin: 20px 0; /* Spacing between paragraphs */
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            color: white;
+            background-color: #9e0fab; /* Green background for buttons */
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1.1em; /* Slightly larger font size for buttons */
+        }
+
+        .btn:hover {
+           
+            background: linear-gradient(to right, #6a0dad, #9b5de5, #d6a6e3, #87CEEB);
+
+        }
+
+        /* Footer Styles */
+        footer {
+            background: rgba(230, 224, 224, 0.8); /* Dark semi-transparent background */
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1em; /* Font size for footer text */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="hospital-logo.png" alt="Hospital Logo" class="logo"> <!-- Hospital Logo -->
+        <h1>Welcome, Dr. Belinda</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">View Appointments</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <div class="container">
+            <section class="welcome-message">
+                <h2>Welcome to the Hospital Management System</h2>
+                <p>We are glad to have you here. Use the menu to navigate through your tasks.</p>
+                <a href="#" class="btn">View Appointments</a>
+            </section>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            
+        </div>
+    </footer>
+</body>
+</html>
