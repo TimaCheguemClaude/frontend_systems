@@ -5,63 +5,79 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hospital Management System</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <style>
+    body {
+      background-color: #f3e5f5; /* Light purple background */
+    }
+    .navbar {
+      background-color: #6a1b9a; /* Dark purple for navigation bar */
+      justify-content: center; /* Center the text */
+    }
+    .navbar-brand {
+      color: white !important;
+      font-size: 1.5rem;
+    }
     .menu-item {
       text-align: center;
       padding: 20px;
       border-radius: 10px;
       margin: 15px;
       color: white;
-      background-color: #007bff; /* Primary color changed to blue */
+      background-color: #8e24aa; /* Purple button */
       display: block;
       text-decoration: none;
     }
     .menu-item:hover {
-      background-color: #0056b3; /* Darker blue on hover */
+      background-color: #7b1fa2; /* Darker purple on hover */
       cursor: pointer;
     }
     .icon-text {
       display: block;
       margin-top: 10px;
     }
+    .content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 50px;
+    }
+    .left, .right {
+      flex: 1;
+      padding: 20px;
+    }
+    .right {
+      text-align: center;
+    }
   </style>
 </head>
 <body>
   <div class="container-fluid">
     <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light flex-column align-items-start">
+    <nav class="navbar navbar-expand-lg navbar-light">
       <a class="navbar-brand" href="#">Hospital Management System</a>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav flex-column">
-          <li class="nav-item active">
-            <a class="nav-link" href="dashboard.html">Dashboard</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="book_appointment.html">Book Appointment</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="appointment_history.html">Appointment History</a>
-          </li>
-        </ul>
-      </div>
     </nav>
 
     <!-- Main Content -->
-    <div class="row mt-5">
-      <div class="col-md-6">
-        <div class="text-center">
-          <a href="book_appointment.html" class="menu-item">
-            <i class="fas fa-calendar-plus fa-3x"></i>
-            <span class="icon-text">Book My Appointment</span>
-          </a>
-          <a href="appointment_history.html" class="menu-item">
-            <i class="fas fa-history fa-3x"></i>
-            <span class="icon-text">Appointment History</span>
-          </a>
-        </div>
+    <div class="content">
+      <div class="left">
+        <a href="book_appointment.html" class="menu-item">
+          <i class="fas fa-calendar-plus fa-3x"></i>
+          <span class="icon-text">Book My Appointment</span>
+        </a>
+        <a href="appointment_history.html" class="menu-item">
+          <i class="fas fa-history fa-3x"></i>
+          <span class="icon-text">Appointment History</span>
+        </a>
+        <a href="profile.html" class="menu-item">
+          <i class="fas fa-user fa-3x"></i>
+          <span class="icon-text">Profile</span>
+        </a>
       </div>
-      <div class="col-md-6">
+      <div class="right">
         <!-- Other content can go here -->
+        <h2>Welcome to the Hospital Management System</h2>
+        <p>We are glad to have you here. Use the menu to navigate through your tasks.</p>
       </div>
     </div>
   </div>

@@ -5,26 +5,89 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Appointment History - Hospital Management System</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    body {
+      background-color: #f3e5f5; /* Light purple background */
+    }
+    .container {
+      margin-top: 50px;
+    }
+    .status {
+      font-weight: bold;
+    }
+    .missed {
+      color: red;
+    }
+    .done {
+      color: green;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
     <h1>Appointment History</h1>
-    <ul id="appointmentsList" class="list-group">
+    <input type="text" id="searchInput" class="form-control" placeholder="Search appointments..." onkeyup="searchAppointments()">
+    <ul id="appointmentsList" class="list-group mt-3">
       <!-- Appointments will be listed here -->
     </ul>
   </div>
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
+      loadAppointments();
+    });
+
+    function loadAppointments() {
       let appointments = JSON.parse(localStorage.getItem('appointments')) || [];
       const appointmentsList = document.getElementById('appointmentsList');
-      appointments.forEach(appointment => {
+      const today = new Date().toISOString().split('T')[0];
+
+      // Sort appointments by date
+      appointments.sort((a, b) => new Date(a.date) - new Date(b.date));
+
+      appointmentsList.innerHTML = '';
+      appointments.forEach((appointment, index) => {
         let listItem = document.createElement('li');
         listItem.className = 'list-group-item';
-        listItem.innerHTML = `Appointment on ${appointment.date} <br> Reason: ${appointment.reason} <br> Urgency: ${appointment.urgency}`;
+        listItem.setAttribute('data-index', index);
+        let status = '';
+
+        if (appointment.attended) {
+          status = '<span class="status done">Done</span>';
+        } else if (appointment.date < today) {
+          status = '<span class="status missed">Missed</span>';
+        } else {
+          status = '<button class="btn btn-success btn-sm" onclick="markAsAttended(' + index + ')">Mark as Attended</button>';
+        }
+
+        listItem.innerHTML = `Appointment on ${appointment.date} <br> Reason: ${appointment.reason} <br> Urgency: ${appointment.urgency} <br> Status: ${status}`;
         appointmentsList.appendChild(listItem);
       });
-    });
+    }
+
+    function markAsAttended(index) {
+      let appointments = JSON.parse(localStorage.getItem('appointments')) || [];
+      appointments[index].attended = true;
+      localStorage.setItem('appointments', JSON.stringify(appointments));
+      loadAppointments(); // Reload the appointments to update the status
+    }
+
+    function searchAppointments() {
+      const searchInput = document.getElementById('searchInput').value.toLowerCase();
+      const appointmentsList = document.getElementById('appointmentsList');
+      const listItems = appointmentsList.getElementsByTagName('li');
+
+      for (let i = 0; i < listItems.length; i++) {
+        const listItem = listItems[i];
+        const appointmentText = listItem.textContent.toLowerCase();
+        if (appointmentText.includes(searchInput)) {
+          listItem.style.display = '';
+        } else {
+          listItem.style.display = 'none';
+        }
+      }
+    }
   </script>
 </body>
 </html>

@@ -5,13 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Book Appointment - Hospital Management System</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <style>
+    body {
+      background-color: #f3e5f5; /* Light purple background */
+    }
     .notification {
       background-color: #e9ecef;
-      border-left: 5px solid #007bff;
+      border-left: 5px solid #8e24aa; /* Purple border */
       margin-bottom: 20px;
       padding: 10px;
       display: none;
+      transition: opacity 0.5s ease-in-out;
+    }
+    .btn-primary {
+      background-color: #8e24aa; /* Purple button */
+      border-color: #8e24aa;
+    }
+    .btn-primary:hover {
+      background-color: #7b1fa2; /* Darker purple on hover */
+      border-color: #7b1fa2;
+    }
+    .container {
+      margin-top: 50px;
     }
   </style>
 </head>
@@ -20,15 +36,15 @@
     <h1>Book Appointment</h1>
     <form id="appointmentForm">
       <div class="form-group">
-        <label for="appointmentDate">Appointment Date</label>
+        <label for="appointmentDate" aria-label="Appointment Date">Appointment Date</label>
         <input type="date" class="form-control" id="appointmentDate" required>
       </div>
       <div class="form-group">
-        <label for="appointmentReason">Reason for Appointment</label>
+        <label for="appointmentReason" aria-label="Reason for Appointment">Reason for Appointment</label>
         <input type="text" class="form-control" id="appointmentReason" required>
       </div>
       <div class="form-group">
-        <label for="appointmentUrgency">Degree of Urgency</label>
+        <label for="appointmentUrgency" aria-label="Degree of Urgency">Degree of Urgency</label>
         <select class="form-control" id="appointmentUrgency" required>
           <option value="Low">Low</option>
           <option value="Medium">Medium</option>
@@ -38,7 +54,7 @@
       <button type="submit" class="btn btn-primary">Book Appointment</button>
     </form>
     <div class="notification" id="notification">
-      <p>Your appointment successfully booked</p>
+      <p>Your appointment was successfully booked</p>
       <button type="button" class="btn btn-primary" onclick="hideNotification()">Ok</button>
     </div>
   </div>
@@ -57,11 +73,17 @@
 
         // Show notification
         document.getElementById('notification').style.display = 'block';
+        setTimeout(() => {
+          document.getElementById('notification').style.opacity = '1';
+        }, 10);
       }
     });
 
     function hideNotification() {
-      document.getElementById('notification').style.display = 'none';
+      document.getElementById('notification').style.opacity = '0';
+      setTimeout(() => {
+        document.getElementById('notification').style.display = 'none';
+      }, 500);
     }
   </script>
 </body>
