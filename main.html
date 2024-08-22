@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Management System - Welcome</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f3e5f5; /* Light purple background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .card {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .btn-primary {
+            background-color: #8e24aa; /* Purple button */
+            border-color: #8e24aa;
+        }
+        .btn-primary:hover {
+            background-color: #7b1fa2; /* Darker purple on hover */
+            border-color: #7b1fa2;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card text-center">
+        <div class="card-header">
+            <h2>Welcome to the Healthcare Management System</h2>
+        </div>
+        <div class="card-body">
+            <p class="card-text">Please choose your login type:</p>
+            <div class="row">
+                <div class="col-12 mb-2">
+                    <a href="AdminDashboard/authentication/login.html" class="btn btn-primary btn-block btn-lg">Admin Login</a>
+                </div>
+                <div class="col-12 mb-2">
+                    <a href="patient/authentication/login.html" class="btn btn-primary btn-block btn-lg">Patient Login</a>
+                </div>
+                <div class="col-12">
+                    <a href="doctor/authentication/login.html" class="btn btn-primary btn-block btn-lg">Doctor Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
